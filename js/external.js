@@ -3,22 +3,23 @@ alert("Welcome to my Website!");
 const color = prompt("What's your favorite color?");
 alert(`Great, ${color} is my favorite color too!`);
 
-// Movie Rental exercies
+// Movie Rental exercise
 let movieMap = new Map();
-alert("You are renting 3 movies.\n'Little Mermaid', 'Brother Bear' and 'Hercules'.");
+let movies = ['Little Mermaid', 'Brother Bear', 'Hercules'];
+alert(`You are renting 3 movies.\n'${movies[0]}', '${movies[1]}' and '${movies[2]}'.`);
 alert("Answer the following prompts to see how much you will pay.");
-movieMap.set("Little Mermaid",
-    prompt("How long would you like to keep 'Little Mermaid'?","0"));
-movieMap.set("Brother Bear",
-    prompt("How long would you like to keep 'Brother Bear'?","0"));
-movieMap.set("Hercules",
-    prompt("How long would you like to keep 'Hercules'?","0"));
+movieMap.set(`${movies[0]}`,
+    prompt(`How long would you like to keep '${movies[0]}'?`,"0"));
+movieMap.set(`${movies[1]}`,
+    prompt(`How long would you like to keep '${movies[1]}'?`,"0"));
+movieMap.set(`${movies[2]}`,
+    prompt(`How long would you like to keep '${movies[2]}'?`,"0"));
 
 let sum = 0;
 let price = prompt("What is the price per day?","3");
 movieMap.forEach(val => sum += (val * price));
 
 alert(`Awesome! You are renting 
--- 'Little Mermaid' for ${movieMap.get("Little Mermaid")} day(s), 
--- 'Brother Bear' for ${movieMap.get("Brother Bear")} day(s) and 
--- 'Hercules for ${movieMap.get("Hercules")} day(s).\n\nAt $${price} per day your total price is $${sum}.`);
+-- '${movies[0]}' for ${movieMap.get(movies[0])} day(s), 
+-- '${movies[1]}' for ${movieMap.get(movies[1])} day(s) and 
+-- '${movies[2]}' for ${movieMap.get(movies[2])} day(s).\n\nAt $${price} per day your total price is $${sum}.`);
