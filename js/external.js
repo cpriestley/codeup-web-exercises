@@ -22,4 +22,6 @@ movieMap.forEach(val => sum += (val * price));
 alert(`Awesome! You are renting 
 -- '${movies[0]}' for ${movieMap.get(movies[0])} day(s), 
 -- '${movies[1]}' for ${movieMap.get(movies[1])} day(s) and 
--- '${movies[2]}' for ${movieMap.get(movies[2])} day(s).\n\nAt $${price} per day your total price is $${sum}.`);
+-- '${movies[2]}' for ${movieMap.get(movies[2])} day(s).
+
+At $${parseInt(price).toFixed(2)} per day your total price is $${parseInt(sum).toFixed(2)}.`);
