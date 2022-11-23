@@ -97,5 +97,5 @@ alert(calculateTip(tip, bill));
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 function applyDiscount(price, discount) {
-    return price -= price * discount;
+    return price * (1-discount);
 }
