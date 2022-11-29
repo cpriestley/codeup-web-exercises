@@ -52,7 +52,7 @@ document.getElementById('random-color').innerText = analyzeColor(randomColor);
  */
 function analyzeColor(color) {
     let message;
-    switch (color) {
+    switch (color.toLowerCase()) {
         case 'blue':
             message = 'blue is the color of the sky';
             break;
@@ -116,7 +116,6 @@ function calculateTotal(num, total) {
             total *= (1 - 1.00);
             break;
         default:
-            break;
     }
     return total;
 }
