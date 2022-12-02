@@ -26,13 +26,9 @@
         }
     }
 
-    const min = 20;
-    const max = 200;
-
-    generate10RandomNumbers(min, max);
+    generate10RandomNumbers(20, 200);
     printRightTriangle();
 
-    const start = 100;
-    multiplesOf5Descending(start);
+    multiplesOf5Descending(100);
 
 }())
