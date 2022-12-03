@@ -10,8 +10,9 @@ svg {
     padding-left: 10px !important;
 }
 
-html, body {
-    height: 100%;
+body {
+    height: 100vh;
+    min-width: 550px;
 }
 
 .ts-75 {
@@ -22,4 +23,13 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
     border-top: orangered;
     border-top-style: solid;
     border-top-width: medium;
+}
+
+td.data {
+    font-size: 0.75rem;
+}
+
+footer {
+    font-size: 0.75rem;
+    width: 100vw;
 }

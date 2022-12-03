@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/github-style.css">
     <title>Github</title>
 </head>
-<body class="min-vh-100">
+<body>
     <header>
         <!-- Nav bar -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-3 fixed-top">
@@ -40,18 +40,22 @@
     </header>
     <main>
         <div>
-            <div class="py-3">
-                <div>
+            <!-- Codeup Branding-->
+            <div class="d-flex flex-items-between py-3">
+                <div class="d-flex">
                     <img src="img/codeup-arrow.png" class="ts-75" alt="codeup branded arrow">
                 </div>
-                <div class="d-flex">
+                <div class="d-flex align-self-center">
                     Codeup
                 </div>
             </div>
+        </div>
+        <div class="container mx-4 px-1">
             <!-- Nav Tabs -->
             <ul class="nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" id="ex1-tab-1" href="#ex1-tab-1">Repositories</a>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="ex1-tab-2" href="#ex1-tab-2">People</a>
@@ -66,36 +70,42 @@
                     <a class="nav-link" id="ex1-tab-5" href="#ex1-tab-5">Projects</a>
                 </li>
             </ul>
-            <table>
-                <tr>
-                    <th>Codeup's dev team</th>
-                </tr>
-                <tr>
-                    <td>Kent Beck</td>
-                    <td>Member</td>
-                    <td>1 team</td>
-                </tr>
-                <tr>
-                    <td>Codeup Instruction Staff</td>
-                    <td>Member</td>
-                    <td>1 team</td>
-                </tr>
-                <tr>
-                    <td>Martin Fowler</td>
-                    <td>Member</td>
-                    <td>0 teams</td>
-                </tr>
-            </table>
+            <div class="container px-3 py-5">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-active">
+                            <th colspan="3">Codeup's dev team</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kent Beck</td>
+                            <td class="data text-secondary" style="width: 100px;">Member</td>
+                            <td class="data text-secondary" style="width: 100px;">1 team</td>
+                        </tr>
+                        <tr>
+                            <td>Codeup Instruction Staff</td>
+                            <td class="data text-secondary" style="width: 100px;">Member</td>
+                            <td class="data text-secondary" style="width: 100px;">1 team</td>
+                        </tr>
+                        <tr>
+                            <td>Martin Fowler</td>
+                            <td class="data w-auto text-secondary">Member</td>
+                            <td class="data w-auto text-secondary">0 teams</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
     <!-- Footer -->
-    <footer class="d-flex flex-items-between p-3 fixed-bottom">
+    <footer class="container d-flex flex-items-between p-3 position-absolute bottom-0">
         <div class="container d-flex">
-            <div class="col-lg-2 flex-row align-self-center">
+            <div class="col-lg-2 text-nowrap align-self-center text-secondary">
                 &copy; 2018 Github, Inc.
             </div>
-            <div class="flex-row navbar-collapse">
-                <ul class="nav">
+            <div class="navbar-expand flex-row">
+                <ul class="nav collapse navbar-collapse">
                     <li class="nav-item">
                         <a href="#" class="nav-link">Terms</a>
                     </li>
@@ -113,8 +123,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="flex-row flex-row-reverse navbar-collapse">
-                <ul class="nav">
+            <div class="navbar-expand-sm" style="margin-left: auto;margin-right: 0;">
+                <ul class="nav collapse navbar-collapse ms-auto">
                     <li class="nav-item">
                         <a href="#" class="nav-link">Contact Github</a>
                     </li>
