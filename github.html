@@ -5,58 +5,138 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/github-style.css">
     <title>Github</title>
 </head>
-<body>
+<body class="min-vh-100">
     <header>
-        <nav>
-            <ul>
-                <li>Pull requests</li>
-                <li>Issues</li>
-                <li>Marketplace</li>
-                <li>Explore</li>
-            </ul>
+        <!-- Nav bar -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-3 fixed-top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Pull Request</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Issues</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Marketplace</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Explore</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
-        <table>
-            <tr>
-                <th>Codeup's dev team</th>
-            </tr>
-            <tr>
-                <td>Kent Beck</td>
-                <td>Member</td>
-                <td>1 team</td>
-            </tr>
-            <tr>
-                <td>Codeup Instruction Staff</td>
-                <td>Member</td>
-                <td>1 team</td>
-            </tr>
-            <tr>
-                <td>Martin Fowler</td>
-                <td>Member</td>
-                <td>0 teams</td>
-            </tr>
-        </table>
-    </main>
-    <footer>
-        <div>&copy; 2018 GitHub, Inc.</div>
-        <nav>
-            <ul>
-                <li>Terms</li>
-                <li>Privacy</li>
-                <li>Security</li>
-                <li>Status</li>
-                <li>Help</li>
-                <li>Contact GitHub</li>
-                <li>API</li>
-                <li>Training</li>
-                <li>Shop</li>
-                <li>Blog</li>
-                <li>About</li>
+        <div>
+            <div class="py-3">
+                <div>
+                    <img src="img/codeup-arrow.png" class="ts-75" alt="codeup branded arrow">
+                </div>
+                <div class="d-flex">
+                    Codeup
+                </div>
+            </div>
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" id="ex1-tab-1" href="#ex1-tab-1">Repositories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="ex1-tab-2" href="#ex1-tab-2">People</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="ex1-tab-3" href="#ex1-tab-3">Teams</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="ex1-tab-4" href="#ex1-tab-4">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="ex1-tab-5" href="#ex1-tab-5">Projects</a>
+                </li>
             </ul>
-        </nav>
+            <table>
+                <tr>
+                    <th>Codeup's dev team</th>
+                </tr>
+                <tr>
+                    <td>Kent Beck</td>
+                    <td>Member</td>
+                    <td>1 team</td>
+                </tr>
+                <tr>
+                    <td>Codeup Instruction Staff</td>
+                    <td>Member</td>
+                    <td>1 team</td>
+                </tr>
+                <tr>
+                    <td>Martin Fowler</td>
+                    <td>Member</td>
+                    <td>0 teams</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="d-flex flex-items-between p-3 fixed-bottom">
+        <div class="container d-flex">
+            <div class="col-lg-2 flex-row align-self-center">
+                &copy; 2018 Github, Inc.
+            </div>
+            <div class="flex-row navbar-collapse">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Security</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Status</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Help</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-row flex-row-reverse navbar-collapse">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">API</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </footer>
+    <script src="./js/github.js"></script>
 </body>
 </html>

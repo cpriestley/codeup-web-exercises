@@ -1,0 +1,25 @@
+body::before {
+    display: block;
+    content: '';
+    height: 74px;
+}
+
+svg {
+    margin-bottom: -10px;
+    margin-top: -10px;
+    padding-left: 10px !important;
+}
+
+html, body {
+    height: 100%;
+}
+
+.ts-75 {
+    transform: scale(0.75);
+}
+
+ul.nav.nav-tabs li.nav-item a.nav-link.active {
+    border-top: orangered;
+    border-top-style: solid;
+    border-top-width: medium;
+}
