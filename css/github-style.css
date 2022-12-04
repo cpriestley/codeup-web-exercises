@@ -1,3 +1,33 @@
+@charset "UTF-8";
+
+:root {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-lightgray: #D3D3D3;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #007FA3;;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+
 body::before {
     display: block;
     content: '';
@@ -25,11 +55,65 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
     border-top-width: medium;
 }
 
+#ex1-tab-1, #ex1-tab-2, #ex1-tab-3, #ex1-tab-4, #ex1-tab-5 {
+    font-size: 0.80rem;
+}
+
 td.data {
-    font-size: 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.90rem;
 }
 
 footer {
     font-size: 0.75rem;
     width: 100vw;
+}
+
+.g-badge {
+    display: inline-flex !important;
+    background-color: var(--bs-lightgray) !important;
+    font-size: 75%;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 0.25rem;
+    height: 22px !important;
+    width: 22px !important;
+    color: var(--bs-gray-dark) !important;
+}
+
+td.developer {
+    padding-left: 40px !important;
+}
+
+tr td img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+tr td a {
+    color: #6610f2;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+td a span {
+    position: relative;
+    display: block;
+    color: rgba(0,0,0,0.65);
+    font-size: 0.90rem;
+}
+
+table {
+    border: 1px solid #6c757d;
+}
+
+.table-bordered > tbody > tr > td {
+    border-left: 0;
+    border-right: 0;
 }

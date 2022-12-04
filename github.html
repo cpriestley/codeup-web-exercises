@@ -41,7 +41,7 @@
     <main>
         <div>
             <!-- Codeup Branding-->
-            <div class="d-flex flex-items-between py-3">
+            <div class="d-flex flex-items-between bg-light py-3">
                 <div class="d-flex">
                     <img src="img/codeup-arrow.png" class="ts-75" alt="codeup branded arrow">
                 </div>
@@ -50,27 +50,34 @@
                 </div>
             </div>
         </div>
-        <div class="container mx-4 px-1">
+        <div>
             <!-- Nav Tabs -->
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs bg-light" id="tab-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" id="ex1-tab-1" href="#ex1-tab-1">Repositories</a>
-
+                    <a class="nav-link text-secondary active text-body fw-bolder" id="ex1-tab-1" href="#ex1-tab-1">
+                        Repositories <span class="g-badge rounded-pill bg-dark">39</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="ex1-tab-2" href="#ex1-tab-2">People</a>
+                    <a class="nav-link text-secondary" id="ex1-tab-2" href="#ex1-tab-2">
+                        People <span class="g-badge rounded-pill bg-dark">17</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="ex1-tab-3" href="#ex1-tab-3">Teams</a>
+                    <a class="nav-link text-secondary" id="ex1-tab-3" href="#ex1-tab-3">
+                        Teams <span class="g-badge rounded-pill bg-dark">7</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="ex1-tab-4" href="#ex1-tab-4">Projects</a>
+                    <a class="nav-link text-secondary" id="ex1-tab-4" href="#ex1-tab-4">
+                        Projects <span class="g-badge rounded-pill bg-dark">0</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="ex1-tab-5" href="#ex1-tab-5">Projects</a>
+                    <a class="nav-link text-secondary" id="ex1-tab-5" href="#ex1-tab-5">Settings</a>
                 </li>
             </ul>
-            <div class="container px-3 py-5">
+            <div class="px-3 py-5">
                 <table class="table table-bordered">
                     <thead>
                         <tr class="table-active">
@@ -79,17 +86,35 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Kent Beck</td>
+                            <td class="developer">
+                                <img src="https://avatars.githubusercontent.com/u/46154?v=4" class="float-start my-1">
+                                <a href="https://github.com/KentBeck">
+                                    Kent Beck
+                                    <span>KentBeck</span>
+                                </a>
+                            </td>
                             <td class="data text-secondary" style="width: 100px;">Member</td>
                             <td class="data text-secondary" style="width: 100px;">1 team</td>
                         </tr>
                         <tr>
-                            <td>Codeup Instruction Staff</td>
+                            <td class="developer">
+                                <img src="https://avatars.githubusercontent.com/u/16561971?v=4" class="float-start my-1">
+                                <a href="https://github.com/codeupinstructors">
+                                    Codeup Instruction Staff
+                                    <span>CodeupInstructors</span>
+                                </a>
+                            </td>
                             <td class="data text-secondary" style="width: 100px;">Member</td>
                             <td class="data text-secondary" style="width: 100px;">1 team</td>
                         </tr>
                         <tr>
-                            <td>Martin Fowler</td>
+                            <td class="developer">
+                                <img src="https://avatars.githubusercontent.com/u/120859?v=4" class="float-start my-1">
+                                <a href="https://github.com/martinfowler">
+                                    Martin Fowler
+                                    <span>martinfowler</span>
+                                </a>
+                            </td>
                             <td class="data w-auto text-secondary">Member</td>
                             <td class="data w-auto text-secondary">0 teams</td>
                         </tr>
@@ -99,7 +124,7 @@
         </div>
     </main>
     <!-- Footer -->
-    <footer class="container d-flex flex-items-between p-3 position-absolute bottom-0">
+    <footer class="container d-flex flex-items-between p-3 position-absolute">
         <div class="container d-flex">
             <div class="col-lg-2 text-nowrap align-self-center text-secondary">
                 &copy; 2018 Github, Inc.
@@ -147,6 +172,9 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"></script>
     <script src="./js/github.js"></script>
 </body>
 </html>
