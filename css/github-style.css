@@ -70,6 +70,10 @@ footer {
     width: 100vw;
 }
 
+footer li a {
+    color: #6610f2 !important;
+}
+
 .g-badge {
     display: inline-flex !important;
     background-color: var(--bs-lightgray) !important;
@@ -116,4 +120,9 @@ table {
 .table-bordered > tbody > tr > td {
     border-left: 0;
     border-right: 0;
+}
+
+.table-active th span {
+    font-size: smaller !important;
+    margin-left: 25pt !important;
 }
