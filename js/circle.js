@@ -33,4 +33,11 @@
     circle.logInfo(false);
     console.log("Circle information rounded to the nearest whole number");
     circle.logInfo(true);
+
+    function roundFloat(floatNum, decimalDigit) {
+        floatNum = floatNum * (10 ** decimalDigit);
+        floatNum = floatNum / (10 ** decimalDigit);
+        return floatNum
+    }
+
 })();

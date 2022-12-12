@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Register With Us</title>
+</head>
+<body>
+  <div class="container border mt-4 py-3">
+    <h3 class="mb-3">Forms</h3>
+    <form  method="POST" action="https://request-inspector.glitch.me/">
+      <label class="form-label" for="email" >Email</label>
+      <input class="form-control" id="email" name="email" type="email">
+      <br>
+      <label class="form-label" for="password">Password</label>
+      <input class="form-control" id="password" name="password" type="password">
+      <br>
+      <label class="form-label" for="bio" >Tell Us About Yourself</label>
+      <textarea class="form-control" name="bio" id="bio" cols="30" rows="10"></textarea>
+      <br>
+      <label class="form-label">How did you hear about us?</label>
+      <br>
+      <div class="form-check">
+        <input class="form-check-input" id="about1" type="radio" name="hear_about" value="billboard">
+        <label class="form-label" for="about1">billboard</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" id="about2" type="radio" name="hear_about" value="radio advertisement">
+        <label class="form-label" for="about2">radio advertisement</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" id="about3" type="radio" name="hear_about" value="internet advertisement">
+        <label class="form-label" for="about3">internet advertisement</label>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="radio" id="about4" name="hear_about" value="other">
+        <label class="form-label" for="about4">other</label>
+      </div>
+      <label class="form-label" for="browser-select">What browser are you using?</label>
+      <select class="form-select mb-3" name="browser-select" id="browser-select">
+        <option value="Edge" selected>Edge</option>
+        <option value="Chrome">Chrome</option>
+        <option value="Safari">Safari</option>
+        <option value="Firefox">Firefox</option>
+      </select>
+      <input class="btn btn-primary" type="submit">
+    </form>
+  </div>
+</body>
+</html>
