@@ -1,4 +1,64 @@
-.fancy-header {
-    color: purple; /* single line comment */
+
+h1, h2, h3, h4, h5, h6 {
+    color: #343a40;
     text-decoration: underline;
+}
+
+body {
+    background: aliceblue url("/img/veridian.webp") no-repeat;
+    background-blend-mode: color-burn;
+    background-position-x: right;
+    background-position-y: 165px;
+    font-family: "Trirong", serif;
+}
+
+ol { list-style: upper-roman; }
+ul { list-style: square; }
+
+
+#product {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#product td, #product th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#product tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#product tr:hover {
+    background-color: #ddd;
+}
+
+#product th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #343a40;
+    color: white;
+}
+
+
+/* unvisited link (:link) */
+a:link {
+    color:mediumpurple;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:dimgrey;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:purple;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
 }
