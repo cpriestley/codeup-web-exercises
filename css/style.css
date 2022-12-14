@@ -1,12 +1,19 @@
-
+:root {
+    --primary: #0b2237
+}
 h1, h2, h3, h4, h5, h6 {
-    color: #343a40;
+    color: var(--primary);
     text-decoration: underline;
 }
 
+hr {
+    height: 2px;
+    background-color: #41617c;
+    border: none;
+}
+
 body {
-    background: aliceblue url("/img/veridian.webp") no-repeat;
-    background-blend-mode: color-burn;
+    background: #E6F1FA url("/img/veridian.png") no-repeat;
     background-position-x: right;
     background-position-y: 165px;
     font-family: "Trirong", serif;
@@ -22,12 +29,12 @@ ul { list-style: square; }
 }
 
 #product td, #product th {
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding: 8px;
 }
 
-#product tr:nth-child(even){
-    background-color: #f2f2f2;
+#product tr:nth-child(odd){
+    /*background-color: #fff;*/
 }
 
 #product tr:hover {
@@ -38,14 +45,14 @@ ul { list-style: square; }
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #343a40;
+    background-color: var(--primary);
     color: white;
 }
 
 
 /* unvisited link (:link) */
 a:link {
-    color:mediumpurple;
+    color:#00668a;
 }
 
 /* visited link (:visited) */
@@ -55,10 +62,33 @@ a:visited {
 
 /* mouse hover over link (:hover) */
 a:hover {
-    color:purple;
+    color:#006ec8;
 }
 
 /* active/selected link (:active) */
 a:active {
     color:green;
+}
+
+#subtitle {
+    color: #D3D3D3;
+}
+
+img {
+    border-radius: 25%;
+    box-shadow: 10px 10px var(--primary); /*#343a40;*/
+    padding: 10px;
+    margin: 15px;
+    width: 30%;
+    height: 30%;
+    border: thin solid var(--primary); /*#343a40;*/
+}
+
+#top {
+    background-color: var(--primary);
+    text-align: center;
+}
+
+.top-color {
+    color: #D3D3D3;
 }
