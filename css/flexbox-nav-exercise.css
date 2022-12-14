@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans&display=swap');
+
+/*
+    box-sizing: border-box for all elements
+    link text, the logo, and icons are surrounded by anchor tags
+    links turn blue on hover
+    anchor tags are display: inline-block
+    clickable area of links immediately flow from one link to the next (padding will help achieve this)
+    Google Fonts used for logo and link text ("Montserrat" and "Work Sans", respectively)
+    the "Logo" text is 3em with .2em of padding above and below
+    no explicit height given to the navbar
+    default styling is removed as needed from the body, unordered list and anchor tag elements
+    logo is horizontally centered on the navbar (automatic margins will help achieve this)
+*/
+
+
+* {box-sizing: border-box}
+body {
+    margin: 0;
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    padding: .2em 0 .2em 0;
+}
+ul {
+    align-items: center;
+    padding: 0;
+    margin: 0
+}
+li {
+    margin: 0 0.5em 0.5em;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+header {
+    background-color: #6c757d;
+}
+nav a {
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    position: relative;
+    z-index: 1;
+    padding: 0 .5em 0 .5em;
+    margin: 0 -.5em 0 -.5em;
+}
+a:hover {
+    color: blue;
+}
