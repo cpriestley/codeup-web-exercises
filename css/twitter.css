@@ -17,10 +17,10 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 header {
-    background-image: url("https://picsum.photos/1200/300");
-    background-size: cover;
-    min-height: 300px;
-    padding-top: 275px;
+    /*background-image: url("https://picsum.photos/1200/300");*/
+    background: url(/img/fsociety-code.gif) no-repeat center top fixed;
+    background-size: contain;
+    padding-top: 450px;
 }
 a {
     color: var(--link-color);
@@ -57,6 +57,10 @@ a {
     align-items: center;
     width: 100%;
     float: left;
+}
+.profile-image {
+    height: 80%;
+    width: 80%;
 }
 .container {
     padding-top: 2em;
