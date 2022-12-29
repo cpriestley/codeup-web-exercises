@@ -12,7 +12,8 @@
         fetch(url, {headers: {'Authorization': gitHubToken}, method: 'GET'})
             .then(response => response.json())
             .then(data => data.filter(event => event.type === 'PushEvent'))
-            .then(pushEvents => console.log(pushEvents[0]['created_at']));
+            .then(pushEvents => console.log(pushEvents[0]['created_at']))
+            .catch(error => console.log(error));
     } catch (e) {
         console.log(e);
     }
