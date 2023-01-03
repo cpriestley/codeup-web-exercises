@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 950px;
+    height: 100vh;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.nav-links li {
+    padding: 10px;
+    margin: 3px;
+    background-color: lightgrey;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: xxx-large;
+}
+
+.header-img > img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.alert-info {
+    background-color: #a4f5f5;
+    border: grey thin solid;
+    text-align: center;
+    padding: 15px 0 15px 0;
+}
+
+.alert-info > a {
+    text-decoration: none;
+    color: black
+    /*padding: 15px 0 15px 0;*/
+}
+
+.main h2 {
+    margin: 0;
+}
+
+.main p {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.sub-section {
+    font-style: italic;
+}
+
+.sub-section h2 {
+    font-size: larger;
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+
+.sub-section p {
+    margin-top: 10px;
+}
+
+footer {
+    font-size: small;
+    clear: both;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+}
+
+#social-media-links i {
+    padding-left: 15px;
+}
+
+@media screen and (min-width: 576px) {
+    body {
+        margin: 0 auto;
+    }
+
+    h1 {
+        display: inline-block;
+        margin: 35px 0;
+        text-align: left;
+    }
+
+    nav {
+        display: inline-block;
+        margin: 35px 0;
+        float: right;
+    }
+
+    .nav-links {
+        display: inline;
+    }
+
+    .nav-links li {
+        display: inline-block;
+        background-color: transparent;
+    }
+
+    .main {
+        width: 65%;
+    }
+
+    .sub-section {
+        width: 30%;
+        float: right;
+    }
+
+    .sub-section h2 {
+        margin: 0;
+    }
+
+    .main, .sub-section {
+        display: inline-block;
+        vertical-align: top;
+
+    }
+
+    .hidden-on-desktop {
+        display: none;
+    }
+
+    footer {
+        clear: both;
+        margin-left: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+}
+
