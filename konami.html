@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        h1, .surprise {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Konami Code</h1>
+    <p>Enter the Konami Code to see a surprise!</p>
+    <script src="js/confetti.js"></script>
+    <script src="js/jquery-3.6.3.js"></script>
+    <script>
+    $(() => {
+        "use strict";
+        let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+        let keys = [];
+        let unlocked = false;
+
+        const start = () => {
+            setTimeout(() => {
+                confetti.start();
+            }, 200);
+        };
+        const stop = () => {
+            setTimeout(() => {
+                confetti.stop();
+            }, 5000);
+        };
+        $(document).keydown((event) => {
+            keys.push(event.key);
+            if (keys.toString().includes(konamiCode.toString()) && !unlocked) {
+                unlocked = true;
+                start();
+                stop();
+                $('body')
+                    .append('<h1>You have added 30 lives!</h1>')
+                    .append('<p class="surprise"><img src="img/konami_code.webp" alt="NES controller displaying konami code"/></p>')
+            } else if (keys.length > konamiCode.length) {
+                keys = [];
+            }
+        });
+    });
+    </script>
+</body>
+</html>
