@@ -5,12 +5,37 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Example Page</h1>
+<div class="important">
+    <h3>NOTICE</h3>
+    <p>This is an important message!</p>
+</div>
+<div class="not-important">
+    <h2>Lorem Ipsum</h2>
+    <p>
+        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
+    </p>
+</div>
+<p class="important">This is also very important.</p>
 
 <script src="js/jquery-3.6.3.js"></script>
 <script>
   "use strict";
   $(() => {
-    alert('DOM has finished loading');
+    // Add jQuery code that will change the background color of an h1 element when clicked.
+    $('h1').click(() => {
+      $('h1').css('background-color', 'red');
+    });
+    // Make all paragraphs have a font size of 18px when they are double clicked.
+    $('p').dblclick(() => {
+        $('p').css('font-size', '18px');
+    });
+    // Set all li text color to red when the mouse is hovering; reset to black when it is not.
+    $('li').hover(() => {
+        $('li').css('color', 'red');
+    }, () => {
+        $('li').css('color', 'black');
+    });
   })
 </script>
 </body>
