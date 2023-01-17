@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Example jQuery Page</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<h1>Attribute & CSS</h1>
+<div>
+    <dl>
+        <dt>What are the most popular national parks?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut beatae exercitationem impedit saepe
+            suscipit.
+        </dd>
+        <dt>How can I make reservations for camping or lodging in a national park?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eveniet expedita facilis
+            minima veniam.
+        </dd>
+        <dt>What are the fees for visiting a national park?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, omnis tempora. Esse libero quibusdam
+            voluptate!
+        </dd>
+        <dt>What are the best times to visit a national park?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, magnam, pariatur. Minus quas temporibus
+            vero.
+        </dd>
+        <dt>Are pets allowed in national parks?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, error exercitationem optio ratione sapiente
+            voluptates.
+        </dd>
+        <dt>What are the regulations for hiking and backpacking in a national park?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores error expedita, odio praesentium
+            quae.
+        </dd>
+        <dt>Are there guided tours available in national parks?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores enim odit qui quo rem saepe?</dd>
+        <dt>What is the best way to get around in a national park?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis ea et id in voluptatibus!</dd>
+        <dt>Are there any accessibility options for people with disabilities in national parks?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur at atque cupiditate
+            doloremque, mollitia!
+        </dd>
+        <dt>Are there any volunteer opportunities in national parks?</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci eius ipsum molestias nam nihil quod?</dd>
+    </dl>
+</div>
+<div><a id="toggle" href="#" type="button">Toggle Answer Visibility</a></div>
+
+<script src="js/jquery-3.6.3.js"></script>
+<script>
+    "use strict";
+
+    $(document).ready(() => {
+        $('dd').addClass('invisible');
+
+        $('#toggle').click(function (event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
+
+        $('dt').click(function () {
+            $(this).toggleClass('highlight');
+        });
+    });
+</script>
+</body>
+</html>
