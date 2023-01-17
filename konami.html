@@ -36,8 +36,12 @@
             }, 5000);
         };
         $(document).keydown((event) => {
-            keys.push(event.key);
-            if (keys.toString().includes(konamiCode.toString()) && !unlocked) {
+            if (event.key !== 'Shift') {
+                keys.push(event.key);
+            }
+            console.log(keys.toString().toLowerCase());
+            console.log(konamiCode.toString().toLowerCase());
+            if (keys.toString().toLowerCase().includes(konamiCode.toString().toLowerCase()) && !unlocked) {
                 unlocked = true;
                 start();
                 stop();
@@ -45,7 +49,7 @@
                     .append('<h1>You have added 30 lives!</h1>')
                     .append('<p class="surprise"><img src="img/konami_code.webp" alt="NES controller displaying konami code"/></p>')
             } else if (keys.length > konamiCode.length) {
-                keys = [];
+                keys.shift();
             }
         });
     });
