@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Konami Code</title>
     <style>
+        p {
+            font-size: 2em;
+            text-align: center;
+        }
         body {
             background-color: black;
             color: white;
@@ -16,6 +20,7 @@
 <body>
     <h1>Konami Code</h1>
     <p>Enter the Konami Code to see a surprise!</p>
+    <p> <progress id="progress" value="0" max="100"> 32% </progress> </p>
     <script src="js/confetti.js"></script>
     <script src="js/jquery-3.6.3.js"></script>
     <script>
