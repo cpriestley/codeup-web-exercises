@@ -6,14 +6,21 @@
         .invisible {
             visibility: hidden;
         }
-
         .highlight {
             background-color: yellow;
+        }
+        a {
+            border: blue thin solid;
+            border-radius: 30px;
+            padding: 1em;
+        }
+        .buttons {
+            margin: 2em 0;
         }
     </style>
 </head>
 <body>
-<h1>Attribute & CSS</h1>
+<h1>Attribute & CSS | Traversing</h1>
 <div>
     <dl>
         <dt>What are the most popular national parks?</dt>
@@ -52,8 +59,59 @@
         <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci eius ipsum molestias nam nihil quod?</dd>
     </dl>
 </div>
-<div><a id="toggle" href="#" type="button">Toggle Answer Visibility</a></div>
-
+<div class="buttons">
+    <a id="toggle-answer" href="#" type="button">Display Answers</a>
+</div>
+<div>
+    <h3>Banff National Park</h3>
+    <ul>
+        <li>
+            It is located in Alberta, Canada.
+        </li>
+        <li>
+            The park is known for its mountains, glaciers, hot springs, and lakes, including Lake Louise and Moraine Lake.
+        </li>
+        <li>
+            It was established in 1885 as Canada's first national park.
+        </li>
+        <li>
+            The park is home to a wide variety of plant and animal life, including grizzly bears, wolves, and elk.
+        </li>
+    </ul>
+    <h3>Yellowstone National Park</h3>
+    <ul>
+        <li>
+            It is located in Wyoming, Montana, and Idaho, USA.
+        </li>
+        <li>
+            The park is known for its geysers, including Old Faithful, and its wildlife, including bison, elk, and black bears.
+        </li>
+        <li>
+            It was established in 1872 as the world's first national park.
+        </li>
+        <li>
+            The park is home to a wide variety of plant and animal life, including grizzly bears, wolves, and elk.
+        </li>
+    </ul>
+    <h3>Yosemite National Park</h3>
+    <ul>
+        <li>
+            It is located in California, USA.
+        </li>
+        <li>
+            The park is known for its granite cliffs, including El Capitan and Half Dome.
+        </li>
+        <li>
+            The park is home to a wide variety of plant and animal life, including black bears, mountain lions, and several species of deer.
+        </li>
+        <li>
+            It was established in 1890 as the first national park in the state of California.
+        </li>
+    </ul>
+</div>
+<div class="buttons">
+    <a id="toggle-last-fact" href="#" type="button">Highlight Last Fact</a>
+</div>
 <script src="js/jquery-3.6.3.js"></script>
 <script>
     "use strict";
@@ -61,13 +119,36 @@
     $(document).ready(() => {
         $('dd').addClass('invisible');
 
-        $('#toggle').click(function (event) {
+        $('#toggle-answer').click(function (event) {
             event.preventDefault();
             $('dd').toggleClass('invisible');
+            $(this).text(
+                $(this).text() === 'Display Answers'
+                    ? 'Hide Answers'
+                    : 'Display Answers'
+            );
         });
 
         $('dt').click(function () {
             $(this).toggleClass('highlight');
+        });
+
+        $('#toggle-last-fact').click(function (event) {
+            event.preventDefault();
+            $('ul li:last-child').toggleClass('highlight');
+            $(this).text(
+                $(this).text() === 'Highlight Last Fact'
+                    ? 'Unhighlight Last Fact'
+                    : 'Highlight Last Fact'
+            );
+        });
+
+        $('h3').click(function () {
+            $(this).next().children().css('font-weight', 'bold');
+        });
+
+        $('li').click(function () {
+            $(this).parent().children().first().css('color', 'blue');
         });
     });
 </script>
