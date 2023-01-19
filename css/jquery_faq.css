@@ -1,5 +1,16 @@
+:root {
+    --bs-nav-height: 56px;
+    --bs-nav-lg-height: 120px;
+}
+
 html {
-    scroll-padding-top: calc(var(--bs-nav-height) + 17px);
+        scroll-padding-top: calc(var(--bs-nav-height) + 17px);
+}
+
+@media (max-width: 992px) {
+    html {
+        scroll-padding-top: calc(var(--bs-nav-lg-height) + 34px);
+    }
 }
 
 body::before {

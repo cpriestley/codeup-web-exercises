@@ -19,7 +19,7 @@ $(document).ready(() => {
 
     $("#toggle-last-fact").click(function (event) {
         event.preventDefault();
-        $("ul li:last-child").toggleClass('highlight');
+        $("main ul li:last-child").toggleClass('highlight');
         $(this).text(
             $(this).text() !== 'Highlight Last Fact' ? 'Highlight Last Fact' : 'Unhighlight Last Fact'
         );
