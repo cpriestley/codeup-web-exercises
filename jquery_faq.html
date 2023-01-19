@@ -2,155 +2,194 @@
 <html lang="en">
 <head>
     <title>Example jQuery Page</title>
-    <style>
-        .invisible {
-            visibility: hidden;
-        }
-        .highlight {
-            background-color: yellow;
-        }
-        a {
-            border: blue thin solid;
-            border-radius: 30px;
-            padding: 1em;
-        }
-        .buttons {
-            margin: 2em 0;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/jquery_faq.css">
 </head>
 <body>
-<h1>Attribute & CSS | Traversing</h1>
-<div>
-    <dl>
-        <dt>What are the most popular national parks?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut beatae exercitationem impedit saepe
-            suscipit.
-        </dd>
-        <dt>How can I make reservations for camping or lodging in a national park?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eveniet expedita facilis
-            minima veniam.
-        </dd>
-        <dt>What are the fees for visiting a national park?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, omnis tempora. Esse libero quibusdam
-            voluptate!
-        </dd>
-        <dt>What are the best times to visit a national park?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, magnam, pariatur. Minus quas temporibus
-            vero.
-        </dd>
-        <dt>Are pets allowed in national parks?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, error exercitationem optio ratione sapiente
-            voluptates.
-        </dd>
-        <dt>What are the regulations for hiking and backpacking in a national park?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores error expedita, odio praesentium
-            quae.
-        </dd>
-        <dt>Are there guided tours available in national parks?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores enim odit qui quo rem saepe?</dd>
-        <dt>What is the best way to get around in a national park?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis ea et id in voluptatibus!</dd>
-        <dt>Are there any accessibility options for people with disabilities in national parks?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur at atque cupiditate
-            doloremque, mollitia!
-        </dd>
-        <dt>Are there any volunteer opportunities in national parks?</dt>
-        <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci eius ipsum molestias nam nihil quod?</dd>
-    </dl>
-</div>
-<div class="buttons">
-    <a id="toggle-answer" href="#" type="button">Display Answers</a>
-</div>
-<div>
-    <h3>Banff National Park</h3>
-    <ul>
-        <li>
-            It is located in Alberta, Canada.
-        </li>
-        <li>
-            The park is known for its mountains, glaciers, hot springs, and lakes, including Lake Louise and Moraine Lake.
-        </li>
-        <li>
-            It was established in 1885 as Canada's first national park.
-        </li>
-        <li>
-            The park is home to a wide variety of plant and animal life, including grizzly bears, wolves, and elk.
-        </li>
-    </ul>
-    <h3>Yellowstone National Park</h3>
-    <ul>
-        <li>
-            It is located in Wyoming, Montana, and Idaho, USA.
-        </li>
-        <li>
-            The park is known for its geysers, including Old Faithful, and its wildlife, including bison, elk, and black bears.
-        </li>
-        <li>
-            It was established in 1872 as the world's first national park.
-        </li>
-        <li>
-            The park is home to a wide variety of plant and animal life, including grizzly bears, wolves, and elk.
-        </li>
-    </ul>
-    <h3>Yosemite National Park</h3>
-    <ul>
-        <li>
-            It is located in California, USA.
-        </li>
-        <li>
-            The park is known for its granite cliffs, including El Capitan and Half Dome.
-        </li>
-        <li>
-            The park is home to a wide variety of plant and animal life, including black bears, mountain lions, and several species of deer.
-        </li>
-        <li>
-            It was established in 1890 as the first national park in the state of California.
-        </li>
-    </ul>
-</div>
-<div class="buttons">
-    <a id="toggle-last-fact" href="#" type="button">Highlight Last Fact</a>
-</div>
-<script src="js/jquery-3.6.3.js"></script>
-<script>
-    "use strict";
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav navbar-collapse navbar-light justify-content-start m-0">
+                <li class="nav-item mx-2"><a class="nav-link text-white" href="#Section1">Park FAQ's</a></li>
+                <li class="nav-item mx-2"><a class="nav-link text-white" href="#Section2">Park Facts</a></li>
+                <li class="nav-item mx-2"><a class="nav-link text-white" href="#Section3">Picture Swap</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="text-center">
+        <div class="container-fluid bg-secondary py-5 mb-4">
+            <h1 class="display-5 fw-bold text-white">Attribute & CSS | Traversing</h1>
+        </div>
+    </section>
+    <div class="container">
+        <section id="Section1">
+            <div class="mb-4">
+                <a id="toggle-answer" class="btn btn-secondary" href="#" type="button">Display Answers</a>
+            </div>
+            <div>
+                <dl>
+                    <dt>What are the most popular national parks?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut beatae exercitationem impedit
+                        saepe
+                        suscipit.
+                    </dd>
+                    <dt>How can I make reservations for camping or lodging in a national park?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque eveniet
+                        expedita
+                        facilis
+                        minima veniam.
+                    </dd>
+                    <dt>What are the fees for visiting a national park?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, omnis tempora. Esse libero
+                        quibusdam
+                        voluptate!
+                    </dd>
+                    <dt>What are the best times to visit a national park?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, magnam, pariatur. Minus quas
+                        temporibus
+                        vero.
+                    </dd>
+                    <dt>Are pets allowed in national parks?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, error exercitationem optio
+                        ratione
+                        sapiente
+                        voluptates.
+                    </dd>
+                    <dt>What are the regulations for hiking and backpacking in a national park?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores error expedita, odio
+                        praesentium
+                        quae.
+                    </dd>
+                    <dt>Are there guided tours available in national parks?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores enim odit qui quo rem saepe?
+                    </dd>
+                    <dt>What is the best way to get around in a national park?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis ea et id in
+                        voluptatibus!
+                    </dd>
+                    <dt>Are there any accessibility options for people with disabilities in national parks?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur at atque
+                        cupiditate
+                        doloremque, mollitia!
+                    </dd>
+                    <dt>Are there any volunteer opportunities in national parks?</dt>
+                    <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci eius ipsum molestias nam
+                        nihil
+                        quod?
+                    </dd>
+                </dl>
+            </div>
+            <hr>
+        </section>
+        <section id="Section2">
+            <div class="mb-4">
+                <a id="toggle-last-fact" class="btn btn-secondary" href="#" type="button">Highlight Last Fact</a>
+            </div>
+            <div>
+                <h3>Banff National Park</h3>
+                <ul>
+                    <li>
+                        It is located in Alberta, Canada.
+                    </li>
+                    <li>
+                        The park is known for its mountains, glaciers, hot springs, and lakes, including Lake Louise and
+                        Moraine
+                        Lake.
+                    </li>
+                    <li>
+                        It was established in 1885 as Canada's first national park.
+                    </li>
+                    <li>
+                        The park is home to a wide variety of plant and animal life, including grizzly bears, wolves,
+                        and
+                        elk.
+                    </li>
+                </ul>
+                <h3>Yellowstone National Park</h3>
+                <ul>
+                    <li>
+                        It is located in Wyoming, Montana, and Idaho, USA.
+                    </li>
+                    <li>
+                        The park is known for its geysers, including Old Faithful, and its wildlife, including bison,
+                        elk,
+                        and
+                        black
+                        bears.
+                    </li>
+                    <li>
+                        It was established in 1872 as the world's first national park.
+                    </li>
+                    <li>
+                        The park is home to a wide variety of plant and animal life, including grizzly bears, wolves,
+                        and
+                        elk.
+                    </li>
+                </ul>
+                <h3>Yosemite National Park</h3>
+                <ul>
+                    <li>
+                        It is located in California, USA.
+                    </li>
+                    <li>
+                        The park is known for its granite cliffs, including El Capitan and Half Dome.
+                    </li>
+                    <li>
+                        The park is home to a wide variety of plant and animal life, including black bears, mountain
+                        lions,
+                        and
+                        several species of deer.
+                    </li>
+                    <li>
+                        It was established in 1890 as the first national park in the state of California.
+                    </li>
+                </ul>
+            </div>
+            <hr>
+        </section>
+        <section id="Section3">
+            <div id="picture-frame" class="d-flex justify-content-around mb-4">
 
-    $(document).ready(() => {
-        $('dd').addClass('invisible');
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://freesvg.org/img/1286146771.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <a href="#" id="1" class="btn btn-primary swap" type="button">Swap</a>
+                    </div>
+                </div>
 
-        $('#toggle-answer').click(function (event) {
-            event.preventDefault();
-            $('dd').toggleClass('invisible');
-            $(this).text(
-                $(this).text() === 'Display Answers'
-                    ? 'Hide Answers'
-                    : 'Display Answers'
-            );
-        });
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://freesvg.org/img/1286138576.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <a href="#" id="2" class="btn btn-primary swap" type="button">Swap</a>
+                    </div>
+                </div>
 
-        $('dt').click(function () {
-            $(this).toggleClass('highlight');
-        });
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://freesvg.org/img/navyblue.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <a href="#" id="3" class="btn btn-primary swap" type="button">Swap</a>
+                    </div>
+                </div>
 
-        $('#toggle-last-fact').click(function (event) {
-            event.preventDefault();
-            $('ul li:last-child').toggleClass('highlight');
-            $(this).text(
-                $(this).text() === 'Highlight Last Fact'
-                    ? 'Unhighlight Last Fact'
-                    : 'Highlight Last Fact'
-            );
-        });
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="p-2">
 
-        $('h3').click(function () {
-            $(this).next().children().css('font-weight', 'bold');
-        });
-
-        $('li').click(function () {
-            $(this).parent().children().first().css('color', 'blue');
-        });
-    });
-</script>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+<script src="js/jquery_faq.js"></script>
 </body>
 </html>
