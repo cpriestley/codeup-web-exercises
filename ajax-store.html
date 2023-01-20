@@ -27,7 +27,7 @@
 </header>
 <main>
     <div class="container py-4">
-        <h3 id="ajax-store">Ajax Store</h3>
+        <h3 id="ajax-store">Exercise</h3>
         <ol>
             <li>Download and save <a href="#">ajax-store.html</a>.</li>
             <li>Create a <code>data</code> directory and download <a href="data/inventory.json">inventory.json</a>
@@ -64,11 +64,6 @@
             </tfoot>
         </table>
     </div>
-    <section>
-        <div class="container text-center">
-            <img src="img/ajax.png" alt="">
-        </div>
-    </section>
 </main>
 <footer>
     <div class="container d-flex justify-content-evenly text-secondary border-top border-bottom py-3">
@@ -84,6 +79,15 @@
     (function () {
         "use strict";
 
+        function createTableRow({title, quantity, categories, price}) {
+            return `<tr>
+                        <td>${title}</td>
+                        <td>${quantity}</td>
+                        <td>${categories.join(" | ")}</td>
+                        <td>${price}</td>
+                    </tr>`
+        }
+
         // TODO: Create an AJAX GET request for the file under data/inventory.json
         function updateTable() {
             $.ajax(
@@ -98,14 +102,7 @@
                     success: (data) => {
                         console.log(data);
                         let productRows = "";
-                        data.forEach(({title, quantity, categories, price}) => {
-                            productRows += "<tr>";
-                            productRows += "<td>" + title + "</td>";
-                            productRows += "<td>" + quantity + "</td>";
-                            productRows += "<td>" + categories + "</td>";
-                            productRows += "<td>" + price + "</td>";
-                            productRows += "</tr>";
-                        });
+                        data.forEach( data => { productRows += createTableRow(data); });
                         $("#insertProducts").html(productRows);
                     },
                     error: function (error) {
