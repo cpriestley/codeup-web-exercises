@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Store</title>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Mapbox CSS-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        body {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        #mapBox {
+            min-width: 500px;
+            max-width: 500px;
+        }
+
+        #map {
+            width: 400px;
+            height: 300px;
+        }
+
+        #zoomRange {
+            width: 360px;
+        }
+
+        datalist {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="container text-center border-top border-bottom py-5">
+        <h1>Mapbox API</h1>
+    </div>
+</header>
+<main>
+    <div class="container py-4">
+        <h3 id="ajax-store">Exercise</h3>
+        <ol>
+            <li>Generate a Mapbox API Key using the steps from above</li>
+            <li>Create a new file named <code>mapbox_maps_api.html</code> and add a map using the next steps.</li>
+            <li>Generate a map that shows the city with your favorite restaurant using geocoding.</li>
+            <li>Redraw the map of the above location at zoom levels 5, 15, and 20. Do this by simply changing the value
+                of zoom level where the map properties are initially set and refresh the page to see the changes. Can
+                the zoom be changed programmatically after the initial map is drawn?
+            </li>
+            <li>Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for
+                best viewing distance.
+            </li>
+            <li>Create a popup with the name of the restaurant.</li>
+            <li>Make sure the info window does not display until the marker has been clicked on.</li>
+            <li>Refactor your code to display at least three of your favorite restaurants with information about each.
+                Create an array of objects with information about each restaurant to accomplish this. Use a <code>.forEach()</code>
+                loop rather than a for loop.
+            </li>
+        </ol>
+        <h3 id="bonuses-roughly-in-ascending-order-of-challenge">Bonuses (roughly in ascending order of challenge)</h3>
+        <ul>
+            <li>Info windows can contain basic HTML, not just plain text. Add some additional information about your
+                restaurant to the popup such as why it is your favorite, dishes you like, images, etc.
+            </li>
+            <li>Add a select input that allows the user to change the zoom level to 5, 15, or 20.</li>
+            <li>Add a text box for the user to enter an address that will use geocoding to center the map and place a
+                marker on that location.
+            </li>
+            <li>Add a button that will hide all markers.</li>
+            <li>Using this <a href="https://docs.mapbox.com/mapbox-gl-js/example/animate-marker/">marker animation
+                example</a> as a starting point, animate a marker to bounce up and down. Alter the animation to stop
+                after two seconds. Make the amount of bounce animation scale according to zoom level.
+            </li>
+            <li>Replace the generic marker icon with an image that is more appropriate for each restaurant. A tutorial
+                for this can be found <a href="https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/">here</a>.
+            </li>
+        </ul>
+    </div>
+    <div class="container mb-5 border py-4 w-50" id="mapBox">
+        <h2 class="text-center mb-3">Cafe Du Monde</h2>
+        <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Restaurant Name">
+            <button class="btn btn-outline-secondary" type="button" id="search">search</button>
+        </div>
+        <div id="map" class="m-auto"></div>
+        <div class="m-auto">
+            <label for="zoomRange" class="form-label text-center fw-bold w-100 mt-2">Zoom Level (5 -
+                20)</label>
+            <input type="range" class="form-range w-100" min="5" max="20" step="5" value="5" list="markers"
+                   id="zoomRange">
+            <datalist id="markers">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </datalist>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="container d-flex justify-content-evenly text-secondary border-top border-bottom py-3">
+        <div>
+            <pre>&copy; 2023 - My Tool Store   |   Clayton O. Priestley</pre>
+        </div>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    $(function () {
+        mapboxgl.accessToken = MAPBOX_API_KEY;
+        let center;
+        let map = new mapboxgl.Map({
+            container: "map", // container ID
+            style: 'mapbox://styles/mapbox/streets-v12', // style URL
+            zoom: 3 // starting zoom
+        }).addControl(new mapboxgl.NavigationControl());
+
+        let cafeInfo = [{
+            address: "3130 Piedmont Rd NE, Atlanta, GA 30305",
+            popupHTML: `<span class="p-3">Bones</span>`
+        }, {
+            address: "Dough Pizzeria Napoletana, Blanco Rd, San Antonio, TX 78216",
+            popupHTML: `<span class="p-3">Dough Pizzeria Napoletana</span>`
+        }, {
+            address: "Café Du Monde",
+            popupHTML: `<span class="p-3">Café Du Monde</span>`
+        }];
+
+        cafeInfo.forEach((cafe) => {
+            placeMarkerAndPopup(cafe, mapboxgl.accessToken, map);
+        });
+
+        function placeMarkerAndPopup(cafe, token, map) {
+            geocode(cafe.address, token)
+                .then(function (coordinates) {
+                    center = coordinates;
+                    map.setCenter(coordinates)
+                    new mapboxgl.Marker()
+                        .setLngLat(coordinates)
+                        .setPopup(new mapboxgl.Popup().setHTML(cafe.popupHTML))
+                        .addTo(map);
+                });
+        }
+
+        $("#search").click(function () {
+            let address = $(this).prev().val();
+            geocode(address, mapboxgl.accessToken)
+                .then(function (coordinates) {
+                    center = coordinates;
+                    map.flyTo({
+                        center: coordinates,
+                        zoom: 15,
+                    });
+                    new mapboxgl.Marker()
+                        .setLngLat(coordinates)
+                        .addTo(map);
+                });
+        });
+
+        $("#zoomRange").on('change', function () {
+            map.setZoom($(this).val()).setCenter(center)
+        });
+
+    });
+
+</script>
+</body>
+</html>
