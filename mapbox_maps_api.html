@@ -11,6 +11,10 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet'/>
     <link rel="stylesheet" href="css/base.css">
     <style>
+        html, body {
+            min-width: 800px;
+        }
+
         body {
             margin-left: auto !important;
             margin-right: auto !important;
@@ -45,7 +49,7 @@
     </div>
 </header>
 <main>
-    <div class="container py-4">
+    <div class="container py-4 shadow mb-5">
         <h3 id="ajax-store">Exercise</h3>
         <ol>
             <li>Generate a Mapbox API Key using the steps from above</li>
@@ -84,13 +88,13 @@
             </li>
         </ul>
     </div>
-    <div class="container mb-5 border py-4 w-50" id="mapBox">
+    <div class="container mb-5 border py-4 w-50 shadow-lg" id="mapBox">
         <h2 class="text-center mb-3">Cafe Du Monde</h2>
         <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Restaurant Name">
+            <input type="text" class="form-control" placeholder="Restaurant Name">
             <button class="btn btn-outline-secondary" type="button" id="search">search</button>
         </div>
-        <div id="map" class="m-auto"></div>
+        <div id="map" class="m-auto shadow"></div>
         <div class="m-auto">
             <label for="zoomRange" class="form-label text-center fw-bold w-100 mt-2">Zoom Level (5 -
                 20)</label>
